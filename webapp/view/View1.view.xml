@@ -1,0 +1,43 @@
+<mvc:View controllerName="sap.kt.demo.viewandbindnext.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content >
+        <Button text="GoToView2" press="onPressView"></Button>
+            <Table  items="{datamodel>/studentdata}" mode="Delete" delete="onDelete">
+                <columns>
+                    <Column >
+                        <Text text="Exp Id"/>
+                    </Column>
+                    <Column >
+                        <Text text="Exp Name"/>
+                    </Column>
+                    <Column >
+                        <Text text="Amount INR"/>
+                    </Column>
+                    <Column >
+                        <Text text="Amount USD"/>
+                    </Column>
+                    <Column >
+                        <Text text="Amount EUR"/>
+                    </Column>
+                    <Column >
+                        <Text text="Status"/>
+                    </Column>
+                </columns>
+                <items>
+                <ColumnListItem  press="onPressView" type="Navigation">
+                <cells>
+                <Text text="{datamodel>expid}"></Text>
+                <Text text="{datamodel>expname}"></Text>
+                <Input value="{datamodel>amount}"></Input>
+                <Input value="{datamodel>amount}" editable="false"></Input>
+                <Input value="{datamodel>amount}" editable="false"></Input>
+                <Text text="{datamodel>status}"></Text>
+                </cells>
+                </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
